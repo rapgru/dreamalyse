@@ -17,7 +17,7 @@ matrix:
       services: docker
       env:
         - BUILD_WIN=1
-      
+
 script: 
   - |
     if [ "$BUILD_WIN" == "1" ]; then
@@ -27,7 +27,8 @@ script:
         -v ~/.cache/electron:/root/.cache/electron \
         -v ~/.cache/electron-builder:/root/.cache/electron-builder \
         electronuserland/builder:wine \
-        /bin/bash -c "npm run electron:publish"
+        /bin/bash -c "npm install && npm run electron:publish_win"
+
     else
       npm run electron:publish
     fi
