@@ -5,6 +5,7 @@ module.exports = {
       builderOptions: {
         // options placed here will be merged with default
         // configuration and passed to electron-builder
+        appId: "com.github.rapgru.dreamalyze",
         win: {
           target: [
             {

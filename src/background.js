@@ -10,8 +10,12 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
 
+// Set AUMID for NSIS installer
+app.setAppUserModelId('com.github.rapgru.dreamalyze');
+
 // Standard scheme must be registered before the app is ready
 protocol.registerStandardSchemes(['app'], { secure: true });
+
 function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({ width: 800, height: 600 });

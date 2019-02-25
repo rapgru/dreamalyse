@@ -2,7 +2,12 @@
   "name": "dreamalyse",
   "version": "0.1.0",
   "private": true,
-  "author": "Raphael Gruber",
+  "author": {
+    "name": "Raphael Gruber",
+    "email": "raphael.gruber@gmail.com"
+  },
+  "homepage": "https://github.com/rapgru/dreamalyse",
+  "license": "MIT",
   "description": "dreamalyse is a desktop application for keeping a dream diary",
   "scripts": {
     "serve": "vue-cli-service serve",
