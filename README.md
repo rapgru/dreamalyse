@@ -1,34 +1,5 @@
 # dreamalyse
 
-## Project setup
-```
-npm install
-```
+![Logo](https://raw.githubusercontent.com/rapgru/dreamalyse/master/resources/logo.svg "Logo")
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+With dreamalyse you can note down you nightly dreams, as well as search, sort, analyse, categorize, ... them
