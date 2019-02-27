@@ -3,17 +3,47 @@ import {
   createProtocol,
   installVueDevtools,
 } from 'vue-cli-plugin-electron-builder/lib';
+import winston from 'winston';
+
 const path = require('path');
 
+const { combine, timestamp, printf } = winston.format;
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
 
+const mainLogger = winston.createLogger({
+  level: 'info',
+  format: combine(winston.format.timestamp(), winston.format.json()),
+  transports: [
+    //
+    // - Write to all logs with level `info` and below to `combined.log`
+    // - Write all logs error (and below) to `error.log`.
+    //
+    new winston.transports.File({ filename: 'log/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'log/info.log' }),
+  ],
+});
+if (process.env.NODE_ENV !== 'production') {
+  mainLogger.add(new winston.transports.Console({
+    format: combine(
+      timestamp(),
+      printf(info => `${info.timestamp} - ${info.level} - [${info.thread}] ${info.message}`),
+    ),
+  }));
+}
+
+global.sharedObject = {
+  mainLogger,
+};
+
+const logger = mainLogger.child({ thread: 'main' });
+
 // Set AUMID for NSIS installer
 app.setAppUserModelId('com.github.rapgru.dreamalyze');
-
+logger.info('Set AUMID');
 // Standard scheme must be registered before the app is ready
 protocol.registerStandardSchemes(['app'], { secure: true });
 
