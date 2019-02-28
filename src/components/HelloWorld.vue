@@ -11,6 +11,7 @@
           contain
           height="200"
         ></v-img>
+        <v-icon>$vuetify.icons.product</v-icon>
       </v-flex>
 
       <v-flex mb-4>
