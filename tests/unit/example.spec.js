@@ -4,10 +4,10 @@ import HelloWorld from '@/components/HelloWorld.vue';
 
 describe('HelloWorld.vue', () => {
   it('renders props.msg when passed', () => {
-    const msg = 'Welcome to Vuetify';
+    const title = 'Hello!';
     const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg },
+      propsData: { title },
     });
-    expect(wrapper.text()).to.include(msg);
+    expect(wrapper.text()).to.include(title);
   });
 });
