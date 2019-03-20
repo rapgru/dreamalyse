@@ -1,6 +1,6 @@
 <img alt="dreamalyze" src="https://raw.githubusercontent.com/rapgru/dreamalyse/master/public/icons/big.png" width="400">
 
-With dreamalyse you can note down you nightly dreams, as well as search, sort, analyse, categorize, ... them
+With **dreamalyse** you can note down you nightly dreams, as well as search, sort, analyse, categorize, ... them
 
 ---
 
